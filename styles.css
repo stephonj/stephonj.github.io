@@ -5,21 +5,35 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.assignments {
+display: flex;
+flex-wrap: wrap;
+
+}
+
 .assignment {
-    display:flex;
+    width: 22%;
     padding: 10px;
     margin: 10px;
+    padding: 20px 0;
     background: lightblue;
+    border-radius: 5px;
 }
 
 .assignment img{
     width:200px;
     margin: 10px;
     border: 2px solid #483D8B;
+    display: block;
+    margin: auto;
 }
 
 h1 {
     color:purple;
+    text-align: center;
+}
+
+h2{
     text-align: center;
 }
 
