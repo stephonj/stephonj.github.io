@@ -1,0 +1,40 @@
+/* Structure */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #9df9ef;
+}
+
+/*Content*/
+#content {
+    background: #F2AF5C;
+    width:70%;
+    margin:auto; 
+    padding:1%; 
+    border-radius: 5px; /
+}
+
+/* Title */
+#title {
+    color: #2a4d8f;
+    text-align: center;
+}
+
+/* Links */
+#titlelink {
+    color: #191970;
+}
+
+#link1 {
+    color: #B22222;
+}
+
+#link2 {
+    color: #457b9d;
+}
+
+/* Student name */
+#student {
+    color: #8458B3;
+    font-style: italic;
+    text-align: center;
+}
