@@ -1,0 +1,42 @@
+/* Structure */
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background:url("images/racing.jpeg");
+}
+
+#content {
+    background: #C0C0C0;
+    width:70%;
+    margin:auto;
+    padding:1%; 
+    border-radius: 5px; 
+}
+
+/*Tables*/
+td,th {
+    border: 1px solid #808080;
+    border-collapse: collapse;
+    padding:5px 15px;
+}
+
+th {
+    background: #808080;
+}
+
+/*Images*/
+#jesko-pic {
+    box-shadow: 5px 5px #800000;
+}
+
+#rimac-pic {
+    box-shadow: 5px 5px #800000;
+}
+
+/*Typography*/
+h1 {
+    color: #800000;
+}
+
+h2 {
+    color: #800000;
+}
