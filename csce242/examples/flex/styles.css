@@ -1,0 +1,55 @@
+body {
+    background:#3C401F;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    width:95%;
+    margin:auto;
+    background:rgba(255,255,255,0.7);
+    border-radius:5px;
+    padding:5px;
+}
+
+#main-header {
+    background:#A3A64E;
+    color:white;
+    border-radius:5px;
+    padding:5px;
+}
+
+/* Main Navigation */
+#main-nav ul {
+    list-style-type: none; /*Removes bullets*/
+}
+
+#main-nav li {
+    border-bottom:1px solid white;
+}
+
+#main-nav li:first-child{
+    border-top:1px solid white;
+}
+
+#main-nav a {
+    color:white;
+    padding:10px 5px;
+    display:block;
+    text-decoration: none; /*Removes Underlines*/
+}
+
+/* Typography */
+h1 {
+    text-align: center;
+}
+
+/* Larger Devices */
+@media only screen and (min-width: 768px) {
+    body {
+    background:url("images/treebackground.jpeg");
+    background-size: cover;
+    }
+    #content {
+        width:70%;
+    }
+}
