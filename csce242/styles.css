@@ -2,39 +2,90 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: #9df9ef;
+    margin: 0;
 }
 
-/*Content*/
+/* Content */
 #content {
     background: #F2AF5C;
-    width:70%;
-    margin:auto; 
-    padding:1%; 
-    border-radius: 5px; /
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-/* Title */
+/* Header */
 #title {
     color: #2a4d8f;
     text-align: center;
 }
 
-/* Links */
-#titlelink {
-    color: #191970;
-}
-
-#link1 {
-    color: #B22222;
-}
-
-#link2 {
-    color: #457b9d;
-}
-
-/* Student name */
 #student {
     color: #8458B3;
     font-style: italic;
     text-align: center;
+}
+
+#titlelink {
+    color: #191970;
+}
+
+/* Assignments */
+.assignments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.assignment {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.assignment img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.assignment h2 {
+    color: #2a4d8f;
+}
+
+.assignment a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #457b9d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.assignment a:hover {
+    color: #2a4d8f;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+    background: #2a4d8f;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Larger Devices */
+@media only screen and (max-width: 768px) {
+    .assignments {
+        flex-direction: column;
+        align-items: center;
+    }
 }
