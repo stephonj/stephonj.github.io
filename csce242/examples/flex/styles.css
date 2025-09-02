@@ -22,6 +22,37 @@ body {
     padding:5px;
 }
 
+.squirrel {
+    background:#3C401F;
+    padding:5px;
+    border-radius:5px;
+    margin:5px;
+}
+
+/*Gallery*/
+#gallery {
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+#gallery section {
+    text-align: center;
+    width:25%;
+}
+
+#gallery img {
+    padding:5px;
+}
+
+/*
+.squirrel .columns div {
+    width:30%;
+}
+
+/*Images*/
+img {
+    max-width:100%;
+}
 /* Main Navigation */
 #main-nav ul {
     list-style-type: none; /*Removes bullets*/
