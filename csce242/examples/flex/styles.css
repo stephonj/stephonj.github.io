@@ -18,6 +18,10 @@ body {
     padding:5px;
 }
 
+#main-content section, #main-content aside {
+    padding:5px;
+}
+
 /* Main Navigation */
 #main-nav ul {
     list-style-type: none; /*Removes bullets*/
@@ -49,6 +53,14 @@ h1 {
     text-align: center;
 }
 
+.hide {
+    display:none;
+}
+
+.hide-small {
+    display:none; 
+}
+
 /* Larger Devices */
 @media only screen and (min-width: 768px) {
     body {
@@ -62,6 +74,26 @@ h1 {
     /*Columns */
     .columns {
         display:flex;
+    }
+
+    .one {
+        flex:1;
+    }
+
+    .two{
+        flex:2;
+    }
+
+    .three {
+        flex:3;
+    }
+
+    .four {
+        flex:4;
+    }
+
+    .five {
+        flex:5;
     }
 
     #main-nav li {
@@ -82,5 +114,9 @@ h1 {
         background:#3C401F;
         color:white;
         border-bottom:1px solid white;
+    }
+
+    .hide-small {
+        display:block;
     }
 }
