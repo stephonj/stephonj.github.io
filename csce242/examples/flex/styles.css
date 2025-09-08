@@ -141,7 +141,7 @@ h1 {
 /* Larger devices */
 @media only screen and (min-width: 768px) {
     body {
-        background: url(images/background.jpg);
+        background: url(images/treebackground.jpeg);
         background-size:cover;
     }
 
