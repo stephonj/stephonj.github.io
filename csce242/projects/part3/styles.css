@@ -1,16 +1,16 @@
 :root {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #2d2d2d;
-    --accent-bg: #3a3a3a;
+    --primary-bg: #000000;
+    --secondary-bg: #1a1a1a;
+    --accent-bg: #333333;
     --light-bg: #f5f5f5;
     --white-bg: #ffffff;
     --primary-text: #ffffff;
     --secondary-text: #cccccc;
     --dark-text: #333333;
-    --accent-color: #ff0080;
+    --accent-color: #666666;
     --border-color: #555555;
-    --button-bg: #666666;
-    --button-hover: #777777;
+    --button-bg: #444444;
+    --button-hover: #666666;
     --input-bg: #e0e0e0;
 }
 
@@ -25,17 +25,23 @@ body {
     background-color: var(--primary-bg);
     color: var(--primary-text);
     line-height: 1.6;
+    padding-top: 120px;
 }
 
 /* Header Styles */
 .header {
-    background: linear-gradient(45deg, var(--primary-bg), var(--secondary-bg));
+    background: var(--secondary-bg);
     padding: 16px 0;
     border-bottom: 2px solid var(--border-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-content {
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -52,10 +58,7 @@ body {
     justify-content: center;
     margin-right: 32px;
     background: var(--primary-bg);
-}
-
-.logo::before {
-    content: "🎮";
+    color: var(--primary-text);
     font-size: 24px;
 }
 
@@ -72,6 +75,7 @@ body {
 .nav li {
     background: var(--button-bg);
     border-right: 1px solid var(--border-color);
+    flex: 1;
 }
 
 .nav li:first-child {
@@ -91,16 +95,16 @@ body {
     display: block;
     padding: 12px 24px;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
-.nav a:hover,
-.nav a.active {
+.nav a:hover {
     background-color: var(--button-hover);
 }
 
 /* Main Content */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 32px;
 }
@@ -109,8 +113,20 @@ body {
     display: none;
 }
 
-.page.active {
+.page:target {
     display: block;
+}
+
+#home {
+    display: block;
+}
+
+#home:not(:target) {
+    display: none;
+}
+
+.page:target ~ #home {
+    display: none;
 }
 
 h1, h2 {
@@ -132,20 +148,20 @@ h1, h2 {
 
 .hero-image {
     width: 100%;
-    max-width: 600px;
-    height: 300px;
+    max-width: 800px;
+    height: 350px;
     background: var(--accent-bg);
     margin: 32px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 19px;
+    font-size: 18px;
     color: var(--secondary-text);
     border: 2px solid var(--border-color);
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: left;
 }
@@ -155,6 +171,21 @@ h1, h2 {
     padding: 32px;
     border-radius: 10px;
     margin: 32px 0;
+}
+
+.home-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.feature-card {
+    background: var(--accent-bg);
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 /* Game Details Styles */
@@ -167,7 +198,7 @@ h1, h2 {
 
 .game-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: var(--accent-bg);
     border: 2px solid var(--border-color);
     display: flex;
@@ -204,7 +235,7 @@ h1, h2 {
 
 .related-games {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 32px;
 }
 
@@ -217,7 +248,7 @@ h1, h2 {
 
 .game-card-image {
     width: 100%;
-    height: 120px;
+    height: 150px;
     background: var(--accent-bg);
     margin-bottom: 16px;
     border: 1px solid var(--border-color);
@@ -225,12 +256,13 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     color: var(--secondary-text);
+    font-size: 12px;
 }
 
 /* Catalog Styles */
 .catalog-container {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 32px;
 }
 
@@ -269,7 +301,7 @@ h1, h2 {
 
 .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 32px;
 }
 
@@ -291,6 +323,102 @@ h1, h2 {
 .pagination span.active {
     background: var(--accent-color);
 }
+
+/* === Game Details Section === */
+
+.game-details {
+    padding: 40px;
+    background-color: #fff;
+}
+
+.details-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Left side: Main Game Info */
+.game-info {
+    background-color: #ccc;
+    padding: 20px;
+    max-width: 350px;
+    flex-shrink: 0;
+}
+
+.game-info img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.game-info p {
+    margin: 8px 0;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.add-cart-btn,
+.go-back-btn {
+    padding: 8px 12px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-cart-btn:hover,
+.go-back-btn:hover {
+    background-color: #222;
+}
+
+/* Right side: Related Games */
+.related-games {
+    flex: 1;
+}
+
+.related-games h4 {
+    margin-bottom: 10px;
+}
+
+.related-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.related-item {
+    text-align: center;
+    max-width: 120px;
+}
+
+.related-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.related-item button {
+    padding: 5px 8px;
+    font-size: 14px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.related-item button:hover {
+    background-color: #222;
+}
+
+#game-details {
+    display: none;
+}
+
+
 
 /* Wishlist Styles */
 .wishlist-table {
@@ -327,84 +455,31 @@ h1, h2 {
     border: 1px solid var(--border-color);
 }
 
-
-/* Review Styles */
-.review-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-}
-
-.review-form {
-    background: var(--secondary-bg);
-    padding: 32px;
+/* Review & Contact Placeholder Styles */
+.review-form p,
+.contact-form p {
+    text-align: center;
+    font-style: italic;
+    color: var(--secondary-text);
+    padding: 40px 20px;
+    border: 2px dashed var(--border-color);
     border-radius: 10px;
+    background: var(--accent-bg);
 }
 
-.form-group {
-    margin-bottom: 24px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--primary-text);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    background: var(--input-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    color: var(--dark-text);
-}
-
-.rating {
-    display: flex;
-    gap: 5px;
-    margin-top: 8px;
-}
-
-.rating span {
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--border-color);
-}
-
-.rating span:hover,
-.rating span.active {
-    color: #ffd700;
-}
-
-/* Contact Styles */
+/* Review & Contact Containers */
+.review-container,
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
 }
 
+/* Contact Info */
 .contact-info {
     background: var(--secondary-bg);
     padding: 32px;
     border-radius: 10px;
-}
-
-.contact-form {
-    background: var(--light-bg);
-    padding: 32px;
-    border-radius: 10px;
-}
-
-.contact-form h3 {
-    color: var(--dark-text);
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-.contact-form .form-group label {
-    color: var(--dark-text);
 }
 
 /* Responsive Design */
@@ -417,6 +492,10 @@ h1, h2 {
     .nav ul {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    body {
+        padding-top: 160px;
     }
 
     .game-details,
@@ -469,3 +548,4 @@ h1, h2 {
         align-items: center;
     }
 }
+
