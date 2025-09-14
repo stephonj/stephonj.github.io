@@ -472,7 +472,7 @@ h1, h2 {
     border-radius: 10px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
