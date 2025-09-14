@@ -1,0 +1,71 @@
+/* === Structure === */
+.examples section {
+  background-color: darkcyan;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  min-height: 250px;   
+  flex: 1;             
+  margin: 5px;         
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.hidden {
+    display: none;
+}
+
+.sun1 {
+  display: block;
+  margin-left: 20px;
+}
+
+.sun2 {
+  display: block;
+  margin-left: 40px;
+}
+
+.sun3 {
+  display: block;
+  margin-left: 60px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: darkblue; 
+}
+
+footer p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#weather-img {
+  width: 120px;   
+  height: auto;   
+  margin-top: 10px;
+}
+
+
+/* Larger Screens */
+@media only screen and (min-width: 800px) {
+  .examples {
+    flex-direction: row;
+    justify-content: space-around; 
+    align-items: flex-start;
+  }
+
+  .examples section {
+    flex: 1;              
+    max-width: 30%;       
+  }
+}
+

@@ -11,26 +11,29 @@ document.getElementById("btn-click-me").onclick = (event) => {
     event.currentTarget.classList.add("clicked"); //current target is the button that was clicked
 };
 
-document.getElementById("happy-click-me").onclick = (event) => {
-    document.getElementById("p-yay").innerHTML = "Yay!";
-    document.getElementById("happy-click-me").classList.add("happyclicked");
-    event.currentTarget.classList.add("happyclicked"); //current target is the button that was clicked
-};
-
-document.getElementById("sad-click-me").onclick = (event) => {
-    document.getElementById("p-nay").innerHTML = "Nay!";
-    document.getElementById("sad-click-me").classList.add("sadclicked");
-    event.currentTarget.classList.add("sadclicked"); //current target is the button that was clicked
-};
-
-document.getElementById("clear-click-me").onclick = (event) => {
-    document.getElementById("p-clear").innerHTML = " ";
-    document.getElementById("clear-click-me").classList.add("clearclicked");
-    event.currentTarget.classList.add("clearclicked"); //current target is the button that was clicked
-};
-
-document.getElementById("btn-happy").onclick = (event) => {
+document.getElementById("btn-happy").onclick = () => {
     const pFeeling = document.getElementById("p-feeling");
     pFeeling.innerHTML = "Yay";
     pFeeling.classList.add("happy");
+    pFeeling.classList.remove("happy");
 };
+
+document.getElementById("btn-sad").onclick = () => {
+    const pFeeling = document.getElementById("p-feeling");
+    pFeeling.innerHTML = "Nay";
+    pFeeling.classList.add("sad");
+    pFeeling.classList.remove("happy");
+};
+
+document.getElementById("btn-clear").onclick = () => {
+    const pFeeling = document.getElementById("p-feeling");
+    pFeeling.innerHTML = "";
+    pFeeling.classList.remove("sad");
+    pFeeling.classList.remove("happy");
+};
+
+document.getElementById("txt-emotion").onkeyup = (event) => {
+    const userInput = event.currentTarget.value;
+    document.getElementById("p-emotion").innerHTML = `You are feeling ${userInput}.`
+    document.getElementById("img-emotion").classList.remove("hidden");
+}

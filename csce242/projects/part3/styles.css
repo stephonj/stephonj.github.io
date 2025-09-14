@@ -1,0 +1,471 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2d2d2d;
+    --accent-bg: #3a3a3a;
+    --light-bg: #f5f5f5;
+    --white-bg: #ffffff;
+    --primary-text: #ffffff;
+    --secondary-text: #cccccc;
+    --dark-text: #333333;
+    --accent-color: #ff0080;
+    --border-color: #555555;
+    --button-bg: #666666;
+    --button-hover: #777777;
+    --input-bg: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(45deg, var(--primary-bg), var(--secondary-bg));
+    padding: 16px 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    background: var(--primary-bg);
+}
+
+.logo::before {
+    content: "🎮";
+    font-size: 24px;
+}
+
+.nav {
+    flex: 1;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0;
+}
+
+.nav li {
+    background: var(--button-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+.nav li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.nav li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-right: none;
+}
+
+.nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    display: block;
+    padding: 12px 24px;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    background-color: var(--button-hover);
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    text-decoration: underline;
+}
+
+/* Home Page Styles */
+.hero {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    background: var(--accent-bg);
+    margin: 32px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    color: var(--secondary-text);
+    border: 2px solid var(--border-color);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.features {
+    background: var(--secondary-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin: 32px 0;
+}
+
+/* Game Details Styles */
+.game-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.game-image {
+    width: 100%;
+    height: 200px;
+    background: var(--accent-bg);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+}
+
+.game-info p {
+    margin-bottom: 8px;
+}
+
+.game-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: var(--button-bg);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: var(--button-hover);
+}
+
+.related-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+}
+
+.game-card {
+    background: var(--secondary-bg);
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-card-image {
+    width: 100%;
+    height: 120px;
+    background: var(--accent-bg);
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+}
+
+/* Catalog Styles */
+.catalog-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 32px;
+}
+
+.filters {
+    background: var(--secondary-bg);
+    padding: 16px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.filter-section {
+    margin-bottom: 32px;
+}
+
+.filter-section h3 {
+    background: var(--accent-bg);
+    color: var(--primary-text);
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.filter-options {
+    padding-left: 16px;
+}
+
+.filter-options div {
+    padding: 4px 0;
+    color: var(--secondary-text);
+    cursor: pointer;
+}
+
+.filter-options div:hover {
+    color: var(--primary-text);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.pagination span {
+    padding: 8px 12px;
+    background: var(--button-bg);
+    color: var(--primary-text);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.pagination span.active {
+    background: var(--accent-color);
+}
+
+/* Wishlist Styles */
+.wishlist-table {
+    width: 100%;
+    background: var(--secondary-bg);
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.wishlist-table th,
+.wishlist-table td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.wishlist-table th {
+    background: var(--accent-bg);
+}
+
+.wishlist-actions {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.wishlist-image {
+    width: 60px;
+    height: 40px;
+    background: var(--accent-bg);
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+}
+
+
+/* Review Styles */
+.review-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.review-form {
+    background: var(--secondary-bg);
+    padding: 32px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    color: var(--dark-text);
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.rating span {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--border-color);
+}
+
+.rating span:hover,
+.rating span.active {
+    color: #ffd700;
+}
+
+/* Contact Styles */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-info {
+    background: var(--secondary-bg);
+    padding: 32px;
+    border-radius: 10px;
+}
+
+.contact-form {
+    background: var(--light-bg);
+    padding: 32px;
+    border-radius: 10px;
+}
+
+.contact-form h3 {
+    color: var(--dark-text);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.contact-form .form-group label {
+    color: var(--dark-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .game-details,
+    .catalog-container,
+    .review-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .wishlist-table {
+        font-size: 14px;
+    }
+
+    .wishlist-table th,
+    .wishlist-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav li {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav li:first-child,
+    .nav li:last-child {
+        border-radius: 0;
+    }
+
+    .game-buttons {
+        flex-direction: column;
+    }
+
+    .wishlist-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
