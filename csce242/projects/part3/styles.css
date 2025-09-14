@@ -113,21 +113,11 @@ body {
     display: none;
 }
 
+#home,
 .page:target {
     display: block;
 }
 
-#home {
-    display: block;
-}
-
-#home:not(:target) {
-    display: none;
-}
-
-.page:target ~ #home {
-    display: none;
-}
 
 h1, h2 {
     text-align: center;
