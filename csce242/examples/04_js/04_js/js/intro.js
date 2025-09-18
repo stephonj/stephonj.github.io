@@ -116,6 +116,7 @@ document.getElementById("btn-donations").onclick = () => {
         return;
     }
 
+    totalDonations = parseInt(donation);
     const donationPercent = donation / goal * 100;
 
     if(donationPercent >= 100){
@@ -123,6 +124,8 @@ document.getElementById("btn-donations").onclick = () => {
     } else if(donationPercent >= 50) {
         donationMessage.innerHTML = "Over Half Way There";
     } else {
-        donationMessage.innerHTML = "Let's get Going";
+        donationMessage.innerHTML = "Let's get Goaling";
     }
+
+    document.querySelector(":root").style.setProperty("--donation-percent", donationPercent + "%");
 }
