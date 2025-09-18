@@ -87,6 +87,12 @@ main {
     color:purple;
 }
 
+.error {
+    color:red;
+}
+
+
+
 .sub-section a {
     text-decoration:none;
     color:var(--primary-color);
@@ -126,6 +132,10 @@ main {
     animation-name: fun;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+}
+
+.bounce {
+    
 }
 
 /* Donations */
