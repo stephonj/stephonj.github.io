@@ -1,4 +1,4 @@
-// Wanted to put the const in 1 spot so that the code would look better
+// Wanted to put these const in 1 spot so that the code would look better
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 const arrow = document.querySelector('.arrow');
@@ -55,19 +55,16 @@ function updatePlantStatus() {
         statusMessage.textContent = 'Your plant is healthy and happy';
         statusMessage.classList.add('status-healthy');
     } else if (days >= 3 && days <= 5) {
-        // Plant needs watering
         plantImage.src = 'images/plant-needs-water.jpeg';
         plantImage.alt = 'Plant needing water with water droplets';
         statusMessage.textContent = 'Your plant needs watering';
         statusMessage.classList.add('status-warning');
     } else if (days >= 6 && days <= 9) {
-        // Plant is drooping
         plantImage.src = 'images/plant-drooping.jpeg';
         plantImage.alt = 'Drooping plant with wilted leaves';
         statusMessage.textContent = 'Leaves are dropping, the color is changing, water soon';
         statusMessage.classList.add('status-danger');
     } else if (days >= 10 && days <= 12) {
-        // Plant is dead/dying
         plantImage.src = 'images/plant-dead.jpeg';
         plantImage.alt = 'Dead plant in cracked soil';
         statusMessage.textContent = 'Sorry, your plant is no longer with us';
@@ -82,13 +79,10 @@ function updateClock() {
     const minutes = now.getMinutes();
     const ampm = hours >= 12 ? 'pm' : 'am';
     
-    // Convert to 12-hour format
+    // Convert to 12-hour
     hours = hours % 12;
     hours = hours ? hours : 12;
-    
-    // Add leading zero to minutes if needed
     const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-    
     const timeString = `${hours}:${minutesStr} ${ampm}`;
     digitalClock.textContent = timeString;
 }
