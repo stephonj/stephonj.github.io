@@ -1,0 +1,636 @@
+/* Structure */
+:root {
+    --primary-bg: #0f0f0f;
+    --secondary-bg: #1a1a1a;
+    --accent-bg: #2a2a2a;
+    --light-bg: #f5f5f5;
+    --white-bg: #ffffff;
+    --primary-text: #ffffff;
+    --secondary-text: #cccccc;
+    --muted-text: #888888;
+    --dark-text: #333333;
+    --accent-color: #0070f3;
+    --accent-hover: #0056cc;
+    --border-color: #404040;
+    --button-bg: #333333;
+    --button-hover: #4a4a4a;
+    --input-bg: #e0e0e0;
+    --success-color: #00ff88;
+    --warning-color: #ff6b35;
+    --playstation-blue: #003087;
+    --electric-blue: #00d4ff;
+    --neon-pink: #ff0080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #1a1a2e 50%, var(--primary-bg) 100%);
+    color: var(--primary-text);
+    line-height: 1.6;
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(90deg, var(--secondary-bg) 0%, var(--playstation-blue) 50%, var(--secondary-bg) 100%);
+    padding: 16px 0;
+    border-bottom: 3px solid var(--electric-blue);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--electric-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 32px;
+    background: radial-gradient(circle, var(--neon-pink), var(--playstation-blue));
+    color: var(--primary-text);
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+.nav {
+    flex: 1;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.nav li {
+    background: var(--button-bg);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.nav li:hover {
+    background: var(--accent-color);
+}
+
+.nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    display: block;
+    padding: 14px 24px;
+    transition: all 0.3s;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav a.active,
+.nav a:hover {
+    background: var(--accent-color);
+    color: var(--primary-text);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-text);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Main Content */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.page {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+    color: #ff0000;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 48px;
+    color: #ff0000;
+}
+
+h2 {
+    font-size: 32px;
+    color: #ff0000;
+}
+
+/* Home Page Styles */
+.hero {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background: var(--accent-bg);
+    margin: 32px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--secondary-text);
+    border: 2px solid var(--electric-blue);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;           
+    max-width: 100%;        
+    border-radius: 13px;
+    object-fit: cover;      
+    image-rendering: auto;  
+    display: block;         
+}
+
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.features {
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    padding: 32px;
+    border-radius: 15px;
+    margin: 32px 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.features h3 {
+    color: var(--electric-blue);
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.home-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, var(--accent-bg), var(--button-bg));
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+    border-color: var(--electric-blue);
+}
+
+.feature-card h4 {
+    color: var(--electric-blue);
+    font-size: 20px;
+}
+
+/* Game Details Styles */
+.game-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.game-image {
+    width: 100%;
+    height: 400px;
+    background: var(--accent-bg);
+    border: 2px solid var(--electric-blue);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+}
+
+.game-card-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    image-rendering: auto;
+    display: block;
+}
+
+.game-info {
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.game-info p {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.game-info strong {
+    color: var(--electric-blue);
+}
+
+.game-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.btn {
+    padding: 14px 28px;
+    background: linear-gradient(45deg, var(--accent-color), var(--electric-blue));
+    color: var(--primary-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, var(--accent-hover), var(--electric-blue));
+    box-shadow: 0 8px 25px rgba(0, 112, 243, 0.4);
+}
+
+.related-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.game-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.3);
+    border-color: var(--electric-blue);
+}
+
+.game-card-image {
+    width: 100%;
+    height: 200px;
+    background: var(--accent-bg);
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text);
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.game-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.game-card h4 {
+    color: var(--electric-blue);
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.game-card p {
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+/* Catalog Styles */
+.catalog-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 32px;
+}
+
+.filters {
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    padding: 24px;
+    border-radius: 15px;
+    height: fit-content;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.filter-section {
+    margin-bottom: 32px;
+}
+
+.filter-section h3 {
+    background: linear-gradient(45deg, var(--accent-color), var(--electric-blue));
+    color: var(--primary-text);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-options {
+    padding-left: 16px;
+}
+
+.filter-options div {
+    padding: 8px 12px;
+    color: var(--secondary-text);
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.filter-options div:hover {
+    color: var(--primary-text);
+    background: var(--button-bg);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.pagination span {
+    padding: 12px 16px;
+    background: var(--button-bg);
+    color: var(--primary-text);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.pagination span.active,
+.pagination span:hover {
+    background: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
+}
+
+/* Wishlist Styles */
+.wishlist-table {
+    width: 100%;
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.wishlist-table th,
+.wishlist-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.wishlist-table th {
+    background: linear-gradient(45deg, var(--accent-color), var(--electric-blue));
+    color: var(--primary-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wishlist-table tr:hover {
+    background: var(--button-bg);
+}
+
+.wishlist-actions {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.wishlist-image {
+    width: 80px;
+    height: 60px;
+    background: var(--accent-bg);
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wishlist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Review & Contact Placeholder Styles */
+.review-form p,
+.contact-form p {
+    text-align: center;
+    font-style: italic;
+    color: var(--muted-text);
+    padding: 40px 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: 15px;
+    background: var(--accent-bg);
+}
+
+/* Review & Contact Containers */
+.review-container,
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+/* Contact Info */
+.contact-info {
+    background: linear-gradient(135deg, var(--secondary-bg), var(--accent-bg));
+    padding: 32px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info h3 {
+    color: var(--electric-blue);
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.contact-info strong {
+    color: var(--electric-blue);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    #menu-toggle:checked + .hamburger + .nav {
+        max-height: 500px; 
+    }
+
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav li {
+        border-bottom: 1px solid var(--border-color);
+        border-right: none;
+    }
+
+    .nav li:last-child {
+        border-bottom: none;
+    }
+
+    body {
+        padding-top: 160px;
+    }
+
+    .game-details,
+    .catalog-container,
+    .review-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .wishlist-table {
+        font-size: 14px;
+    }
+
+    .wishlist-table th,
+    .wishlist-table td {
+        padding: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    body {
+        padding-top: 200px;
+    }
+
+    .game-buttons {
+        flex-direction: column;
+    }
+
+    .wishlist-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
