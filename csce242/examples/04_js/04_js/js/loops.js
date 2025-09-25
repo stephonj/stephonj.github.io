@@ -69,7 +69,18 @@ document.getElementById("btn-show-toy-prices").onclick = () => {
     const toyDiv = document.getElementById("toy-prices");
     toyDiv.innerHTML="";
 
+    const priceP = document.getElementById("price-p");
+    priceP.innerHTML = "";
+
     for(let toy in toys) {
-        
-    }
+        const p = document.createElement("p");
+        p.innerHTML = toy;
+        toyDiv.append(p);
+
+        //when i click the paragraph... in a div below show the price
+        //like "Ball costs $...""
+        p.onclick = () => {
+            priceP.innerHTML = `${toy} costs $${toys[toy]}.`
+        };
+};
 }
