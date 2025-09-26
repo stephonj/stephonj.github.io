@@ -1,5 +1,5 @@
 document.getElementById("drawBtn").onclick = () => {
-    // Clear previous scene
+    // Clear the scene
     const scene = document.getElementById('scene');
     scene.innerHTML = '';
     
