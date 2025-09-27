@@ -1,11 +1,11 @@
 // NBA Players
-const playersBefore = [];
+const playersBefore = {};
 playersBefore["Shai Gilgeous-Alexander"] = "images/shaibefore.jpeg";
 playersBefore["Nikola Jokic"] = "images/jokicbefore.jpeg";
 playersBefore["Giannis Antetokounmpo"] = "images/giannisbefore.jpeg";
 playersBefore["Luka Doncic"] = "images/lukabefore.jpeg";
 
-const playersAfter = [];
+const playersAfter = {};
 playersAfter["Shai Gilgeous-Alexander"] = "images/shai.jpeg";
 playersAfter["Nikola Jokic"] = "images/jokic.jpeg";
 playersAfter["Giannis Antetokounmpo"] = "images/giannis.jpeg";
@@ -23,16 +23,28 @@ function createPlayerCards() {
     for (let playerName in playersBefore) {
         const card = document.createElement('div');
         card.className = 'player-card';
-        
-        card.innerHTML = `
-            <img src="${playersBefore[playerName]}" alt="${playerName}" loading="lazy">
-            <div class="player-info">
-                <div class="player-name">${playerName}</div>
-                <div class="player-status">Click to see transformation!</div>
-            </div>
-        `;
+        const img = document.createElement('img');
+        img.src = playersBefore[playerName];
+        img.alt = playerName;
+        img.loading = "lazy";
+        const info = document.createElement('div');
+        info.className = 'player-info';
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'player-name';
+        nameDiv.textContent = playerName;
+
+        const statusDiv = document.createElement('div');
+        statusDiv.className = 'player-status';
+        statusDiv.textContent = "Click to see transformation!";
+        info.appendChild(nameDiv);
+        info.appendChild(statusDiv);
+        card.appendChild(img);
+        card.appendChild(info);
+
+        // Popup
         card.onclick = () => showPopup(playerName);
-        
+
+        // Add card
         gallery.appendChild(card);
     }
 }
@@ -53,5 +65,5 @@ function closePopup() {
 // Event listeners
 closeBtn.onclick = () => closePopup();
 
-// Initialize the gallery when page loads
-document.addEventListener('DOMContentLoaded', createPlayerCards);
+// Initialize the gallery
+createPlayerCards();
