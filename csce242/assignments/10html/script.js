@@ -62,7 +62,7 @@ function closePopup() {
     popup.classList.add('hidden');
 }
 
-// Event listeners
+// Close btn
 closeBtn.onclick = () => closePopup();
 
 // Initialize the gallery
