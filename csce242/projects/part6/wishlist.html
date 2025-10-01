@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GamesOnGames - My Wishlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+    <div class="header-content">
+        <div class="logo">🎮</div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                <li><a href="wishlist.html" class="nav-link active">Wishlist</a></li>
+                <li><a href="reviews.html" class="nav-link">Review</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+        <h1>My Wishlist</h1>
+        <table class="wishlist-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Game Title</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="wishlist-image">
+                        <img src="images/ncaa26.jpeg" alt="College Football 26">
+                    </div></td>
+                    <td>College Football 26</td>
+                    <td>$69.99</td>
+                    <td><button class="btn">Remove Game</button></td>
+                </tr>
+                <tr>
+                    <td><div class="wishlist-image">
+                        <img src="images/2k.jpeg" alt="NBA 2K26">
+                    </div></td>
+                    <td>NBA 2K26</td>
+                    <td>$69.99</td>
+                    <td><button class="btn">Remove Game</button></td>
+                </tr>
+                <tr>
+                    <td><div class="wishlist-image">
+                        <img src="images/marvel2.jpg" alt="Marvel Ultimate Alliance 2">
+                    </div></td>
+                    <td>Marvel Ultimate Alliance 2</td>
+                    <td>$39.99</td>
+                    <td><button class="btn">Remove Game</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="wishlist-actions">
+            <a href="catalog.html" class="btn">Back To Catalog</a>
+            <button class="btn">Checkout</button>
+        </div>
+    </main>
+</body>
+</html>
