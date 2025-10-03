@@ -562,6 +562,13 @@ h2 {
     color: var(--electric-blue);
 }
 
+/* Loading */
+.loading-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--secondary-text);
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
     .header-content {

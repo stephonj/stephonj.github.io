@@ -5,14 +5,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+<header class="header">
     <div class="header-content">
         <div class="logo">🎮</div>
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </label>
         <nav class="nav">
             <ul>
@@ -26,59 +24,60 @@
     </div>
 </header>
 
-    <main class="container">
-        <h1>Catalog</h1>
-        <div class="catalog-container">
-            <div class="filters">
-                <div class="filter-section">
-                    <h3>Platform</h3>
-                    <div class="filter-options">
-                        <div>PC</div>
-                        <div>PS4/PS5</div>
-                        <div>PS4</div>
-                        <div>PS2</div>
-                        <div>PS3</div>
-                        <div>Nintendo</div>
-                        <div>Xbox One</div>
-                    </div>
-                </div>
-                <div class="filter-section">
-                    <h3>Genre</h3>
-                    <div class="filter-options">
-                        <div>Sports</div>
-                        <div>RPG</div>
-                        <div>Adventure</div>
-                    </div>
-                </div>
-                <div class="filter-section">
-                    <h3>Price</h3>
-                    <div class="filter-options">
-                        <div>Under $20.00</div>
-                        <div>$20.00 - $40.00</div>
-                        <div>$40 and Above</div>
-                    </div>
+<main class="container">
+    <h1>Catalog</h1>
+    <div class="catalog-container">
+        <div class="filters">
+            <!-- Platform Filter -->
+            <div class="filter-section">
+                <h3>Platform</h3>
+                <div class="filter-options">
+                    <div>PC</div>
+                    <div>PS4/PS5</div>
+                    <div>PS4</div>
+                    <div>PS2</div>
+                    <div>PS3</div>
+                    <div>Nintendo</div>
+                    <div>Xbox One</div>
                 </div>
             </div>
-            
-            <div>
-                <!-- Games will be loaded here by JavaScript -->
-                <div class="catalog-grid">
-                    <p style="text-align: center; grid-column: 1/-1; color: var(--secondary-text);">Loading games...</p>
+            <!-- Genre Filter -->
+            <div class="filter-section">
+                <h3>Genre</h3>
+                <div class="filter-options">
+                    <div>Sports</div>
+                    <div>RPG</div>
+                    <div>Adventure</div>
                 </div>
-                
-                <div class="pagination">
-                    <span class="active">1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
+            </div>
+            <!-- Price Filter -->
+            <div class="filter-section">
+                <h3>Price</h3>
+                <div class="filter-options">
+                    <div>Under $20.00</div>
+                    <div>$20.00 - $40.00</div>
+                    <div>$40 and Above</div>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <!-- Load the JavaScript file -->
-    <script src="catalog.js"></script>
+
+        <div>
+            <div class="catalog-grid">
+                <p style="text-align:center; grid-column:1/-1; color:var(--secondary-text);">Loading games...</p>
+            </div>
+
+            <div class="pagination">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="catalog.js"></script>
 </body>
 </html>
