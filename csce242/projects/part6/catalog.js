@@ -1,5 +1,5 @@
 // URL to your JSON file on GitHub (you'll need to replace this with your actual URL)
-const JSON_URL = 'https://stephonj.github.io/csce242/json/games.json';
+const JSON_URL = 'https://stephonj.github.io/csce242/projects/part6/json/games.json';
 
 // Function to load and display games from JSON
 async function loadGames() {

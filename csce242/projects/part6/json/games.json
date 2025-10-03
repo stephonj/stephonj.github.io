@@ -6,7 +6,7 @@
       "genre": "Action Adventure",
       "price": 19.99,
       "platform": "PS2, PS3, PS4, Xbox 360",
-      "img_name": "images/gtasanandreas.jpeg",
+      "img_name": "json/images/gtasanandreas.jpeg",
       "release_date": "October 26, 2004",
       "description": "Grand Theft Auto: San Andreas puts you in the shoes of Carl 'CJ' Johnson as he returns home to Los Santos in the early '90s.",
       "detail_page": "gta-game-details.html"
@@ -17,7 +17,7 @@
       "genre": "Action/Hack and Slash",
       "price": 29.99,
       "platform": "PS2, PS3, PS4, Xbox One, PC",
-      "img_name": "images/devilmaycry.jpeg",
+      "img_name": "json/images/devilmaycry.jpeg",
       "release_date": "August 23, 2001",
       "description": "Step into the boots of Dante, a demon hunter with supernatural abilities and an arsenal of powerful weapons.",
       "detail_page": "devil-may-cry-details.html"
@@ -28,7 +28,7 @@
       "genre": "Sports/Basketball Simulation",
       "price": 69.99,
       "platform": "PS5, PS4, Xbox Series X/S, Xbox One, PC",
-      "img_name": "images/2k.jpeg",
+      "img_name": "json/images/2k.jpeg",
       "release_date": "September 6, 2025",
       "description": "Experience basketball like never before with NBA 2K26, featuring cutting-edge graphics and realistic player movements.",
       "detail_page": "nba-2k26-details.html"
@@ -39,7 +39,7 @@
       "genre": "Action RPG",
       "price": 39.99,
       "platform": "PC, PS2, PS3, PS4, Xbox One, Xbox 360",
-      "img_name": "images/marvel.jpeg",
+      "img_name": "json/images/marvel.jpeg",
       "release_date": "October 24, 2006",
       "description": "Assemble your ultimate team of Marvel superheroes and save the universe in this action-packed RPG.",
       "detail_page": "game-details.html"
@@ -50,7 +50,7 @@
       "genre": "Sports/Football Simulation",
       "price": 69.99,
       "platform": "PS5, PS4, Xbox Series X/S, Xbox One, PC",
-      "img_name": "images/ncaa26.jpeg",
+      "img_name": "json/images/ncaa26.jpeg",
       "release_date": "July 19, 2025",
       "description": "Experience the passion and pageantry of college football with over 134 FBS schools and authentic stadiums.",
       "detail_page": "college-football-details.html"
@@ -61,7 +61,7 @@
       "genre": "Action RPG/Souls-like",
       "price": 59.99,
       "platform": "PS5, PS4, Xbox Series X/S, Xbox One, PC",
-      "img_name": "images/eldenring.jpeg",
+      "img_name": "json/images/eldenring.jpeg",
       "release_date": "2025",
       "description": "Return to the Lands Between in this standalone cooperative experience set in the world of Elden Ring.",
       "detail_page": "elden-ring-details.html"
@@ -72,7 +72,7 @@
       "genre": "Action RPG",
       "price": 29.99,
       "platform": "PS2, Xbox, GameCube",
-      "img_name": "images/xmen.jpg",
+      "img_name": "json/images/xmen.jpg",
       "release_date": "September 21, 2004",
       "description": "Join the X-Men in their first action-RPG adventure and combat Magneto's Brotherhood of Mutants.",
       "detail_page": "xmen-details.html"
@@ -83,7 +83,7 @@
       "genre": "Action RPG",
       "price": 34.99,
       "platform": "PS2, Xbox, GameCube, PC, PSP",
-      "img_name": "images/xmen2.jpg",
+      "img_name": "json/images/xmen2.jpg",
       "release_date": "September 20, 2005",
       "description": "The X-Men must join forces with Magneto's Brotherhood to stop the rise of the ancient mutant Apocalypse.",
       "detail_page": "xmen2-details.html"
