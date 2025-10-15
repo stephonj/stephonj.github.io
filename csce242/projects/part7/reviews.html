@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GamesOnGames - Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header class="header">
+    <div class="header-content">
+        <div class="logo">🎮</div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+                <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+                <li><a href="reviews.html" class="nav-link active">Review</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <main class="container">
+        <h1>Reviews</h1>
+        <div class="review-container">
+            <div>
+                <h2>Submit A Review</h2>
+                <div class="review-form">
+                <form id="contact-form">
+                    <input type="hidden" name="access_key" value="8740a021-d716-4fde-aa42-1d8c89573070">
+
+                    <p>
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="message">Message:</label><br>
+                        <textarea name="message" required></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Send Message</button>
+                    </p>
+
+                    <div id="contact-result"></div>
+                </form>
+            </div>
+
+            <!-- IFRAME -->
+            <div class="iframe-section">
+                <h3>Find Us Here</h3>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6615.936099132783!2d-81.03426492523275!3d33.99335442083909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bb2802562b89%3A0x1f5707bd271c887!2sAssembly%20Blossom%20North!5e0!3m2!1sen!2sus!4v1760457010384!5m2!1sen!2sus" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    style="border:0;"
+                ></iframe>
+            </div>
+
+            </div>
+            
+            <div>
+                <h2>New Games To Review!</h2>
+                <div class="related-games">
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="json/images/marvel2.jpg" alt="Marvel Ultimate Alliance 2">
+                        </div>
+                        <h4>Ultimate Alliance 2</h4>
+                        <p>$39.99</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="json/images/xmen.jpg" alt="X-Men Legends">
+                        </div>
+                        <h4>X-Men Legends</h4>
+                        <p>$39.99</p>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card-image">
+                            <img src="json/images/xmen2.jpg" alt="X-Men Legends 2">
+                        </div>
+                        <h4>X-Men Legends 2</h4>
+                        <p>$39.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/contact.js"></script>
+</body>
+</html>
