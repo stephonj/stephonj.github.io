@@ -10,6 +10,24 @@ const getGames = async () => {
     }
 };
 
+const showGameDialog = (game) => {
+    const dialog = document.getElementById("game-dialog");
+    
+    // Populate modal with game data
+    document.getElementById("dialog-img").src = `https://stephonj.github.io/csce242/projects/part6/json/${game.img_name}`;
+    document.getElementById("dialog-img").alt = game.title;
+    document.getElementById("dialog-title").textContent = game.title;
+    document.getElementById("dialog-genre").textContent = game.genre;
+    document.getElementById("dialog-platform").textContent = game.platform;
+    document.getElementById("dialog-release").textContent = game.release_date;
+    document.getElementById("dialog-price").textContent = `$${game.price.toFixed(2)}`;
+    document.getElementById("dialog-description").textContent = game.description;
+    document.getElementById("dialog-details-link").href = game.detail_page;
+    
+    // Show the modal
+    dialog.showModal();
+};
+
 const showGames = async () => {
     const games = await getGames();
     const catalogGrid = document.querySelector(".catalog-grid");
@@ -19,6 +37,7 @@ const showGames = async () => {
         const gameCard = document.createElement("div");
         gameCard.classList.add("game-card");
 
+        // Game image
         const imgDiv = document.createElement("div");
         imgDiv.classList.add("game-card-image");
         const img = document.createElement("img");
@@ -26,38 +45,39 @@ const showGames = async () => {
         img.alt = game.title;
         imgDiv.appendChild(img);
 
+        // Game title
         const h4 = document.createElement("h4");
         h4.textContent = game.title;
 
+        // Game price
         const priceP = document.createElement("p");
         priceP.textContent = `$${game.price.toFixed(2)}`;
 
-        const detailsBtn = document.createElement("button");
-        detailsBtn.classList.add("btn");
-        detailsBtn.textContent = "View Details";
-        detailsBtn.addEventListener("click", () => openModal(game));
+        // Quick View button (opens modal)
+        const quickViewBtn = document.createElement("button");
+        quickViewBtn.classList.add("btn");
+        quickViewBtn.textContent = "Quick View";
+        quickViewBtn.onclick = () => showGameDialog(game);
 
-        gameCard.append(imgDiv, h4, priceP, detailsBtn);
+        // Build card and add to grid
+        gameCard.append(imgDiv, h4, priceP, quickViewBtn);
         catalogGrid.appendChild(gameCard);
     });
 };
 
-// Modal 
-const openModal = (game) => {
-    const modal = document.getElementById("gameModal");
-    document.getElementById("modal-title").textContent = game.title;
-    document.getElementById("modal-image").src = `https://stephonj.github.io/csce242/projects/part6/json/${game.img_name}`;
-    document.getElementById("modal-desc").textContent = game.description || "No description available.";
-    document.getElementById("modal-price").textContent = `Price: $${game.price.toFixed(2)}`;
-    modal.style.display = "block";
-};
-
-document.addEventListener("DOMContentLoaded", showGames);
-
-// Close modal when clicking X or outside
-document.addEventListener("click", (event) => {
-    const modal = document.getElementById("gameModal");
-    if (event.target.classList.contains("close") || event.target === modal) {
-        modal.style.display = "none";
-    }
+// Initialize and handle modal close behavior
+document.addEventListener("DOMContentLoaded", () => {
+    showGames();
+    
+    const dialog = document.getElementById("game-dialog");
+    const closeBtn = document.getElementById("close-dialog");
+    
+    // Close modal when clicking the X button
+    closeBtn.onclick = () => dialog.close();
+    
+    // Close modal when clicking outside of it
+    dialog.onclick = (e) => {
+        if (e.target === dialog) dialog.close();
+    };
 });
+

@@ -5,89 +5,99 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="header">
-    <div class="header-content">
-        <div class="logo">🎮</div>
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger">
-            <span></span><span></span><span></span>
-        </label>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="catalog.html" class="nav-link active">Catalog</a></li>
-                <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
-                <li><a href="reviews.html" class="nav-link">Review</a></li>
-                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🎮</div>
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="catalog.html" class="nav-link active">Catalog</a></li>
+                    <li><a href="wishlist.html" class="nav-link">Wishlist</a></li>
+                    <li><a href="reviews.html" class="nav-link">Review</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<main class="container">
-    <h1>Catalog</h1>
-    <div class="catalog-container">
-        <div class="filters">
-            <!-- Platform Filter -->
-            <div class="filter-section">
-                <h3>Platform</h3>
-                <div class="filter-options">
-                    <div>PC</div>
-                    <div>PS4/PS5</div>
-                    <div>PS4</div>
-                    <div>PS2</div>
-                    <div>PS3</div>
-                    <div>Nintendo</div>
-                    <div>Xbox One</div>
+    <main class="container">
+        <h1>Catalog</h1>
+        <div class="catalog-container">
+            <div class="filters">
+                <div class="filter-section">
+                    <h3>Platform</h3>
+                    <div class="filter-options">
+                        <div>PC</div>
+                        <div>PS4/PS5</div>
+                        <div>PS4</div>
+                        <div>PS2</div>
+                        <div>PS3</div>
+                        <div>Nintendo</div>
+                        <div>Xbox One</div>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h3>Genre</h3>
+                    <div class="filter-options">
+                        <div>Sports</div>
+                        <div>RPG</div>
+                        <div>Adventure</div>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h3>Price</h3>
+                    <div class="filter-options">
+                        <div>Under $20.00</div>
+                        <div>$20.00 - $40.00</div>
+                        <div>$40 and Above</div>
+                    </div>
                 </div>
             </div>
-            <div class="filter-section">
-                <h3>Genre</h3>
-                <div class="filter-options">
-                    <div>Sports</div>
-                    <div>RPG</div>
-                    <div>Adventure</div>
+
+            <div>
+                <div class="catalog-grid">
+                    <!-- JS File populates this -->
                 </div>
-            </div>
-            <div class="filter-section">
-                <h3>Price</h3>
-                <div class="filter-options">
-                    <div>Under $20.00</div>
-                    <div>$20.00 - $40.00</div>
-                    <div>$40 and Above</div>
+                <div class="pagination">
+                    <span class="active">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
                 </div>
             </div>
         </div>
+    </main>
 
-        <div>
-            <div class="catalog-grid">
-            <!-- JS File does this -->
-            </div>
-
-            <div class="pagination">
-                <span class="active">1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>6</span>
+    <!-- Game Details Dialog -->
+    <dialog id="game-dialog">
+        <div class="dialog-content">
+            <button class="close-dialog" id="close-dialog">✕</button>
+            <div class="dialog-body">
+                <div class="dialog-image">
+                    <img id="dialog-img" src="" alt="">
+                </div>
+                <div class="dialog-info">
+                    <h2 id="dialog-title"></h2>
+                    <p><strong>Genre:</strong> <span id="dialog-genre"></span></p>
+                    <p><strong>Platform:</strong> <span id="dialog-platform"></span></p>
+                    <p><strong>Release Date:</strong> <span id="dialog-release"></span></p>
+                    <p><strong>Price:</strong> <span id="dialog-price"></span></p>
+                    <p class="dialog-description" id="dialog-description"></p>
+                    <div class="dialog-buttons">
+                        <button class="btn">Add to Cart</button>
+                        <a id="dialog-details-link" href="" class="btn">Full Details</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </dialog>
 
-<script src="catalog.js"></script>
-<!-- Game Details Popup -->
-<div id="gameModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="modal-body">
-      <h2 id="modal-title"></h2>
-      <img id="modal-image" alt="Game image">
-      <p id="modal-desc"></p>
-      <p id="modal-price"></p>
-    </div>
-  </div>
-</div>
+    <script src="catalog.js"></script>
 </body>
 </html>
